@@ -1,0 +1,95 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo {
+text-align: center;
+margin: 20px 0;
+color: var(--text-color);
+font-size: 2rem;
+}
+
+.form-container {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 70vh;
+background-color: var(--background-color);
+padding: 20px;
+border: black;
+}
+
+.car-form {
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 500px;
+border: 1px solid var(--border-color); /* Borde negro para el formulario */
+}
+
+.form-group {
+margin-bottom: 20px;
+border: 1px solid var(--border-color); /* Borde negro para cada grupo */
+padding: 15px;
+border-radius: 5px;
+}
+
+.form-label {
+display: block;
+margin-bottom: 8px;
+font-weight: 600;
+color: var(--text-color);
+}
+
+.form-input {
+width: 100%;
+padding: 12px 15px;
+border: 1px solid black; /* Borde negro para inputs */
+border-radius: 5px;
+font-size: 16px;
+transition: border 0.3s ease;
+}
+
+.form-input:focus {
+outline: none;
+border-color: var(--primary-color);
+box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-input:invalid {
+border-color: var(--error-color);
+}
+
+.submit-btn {
+width: 100%;
+padding: 12px;
+background-color: #58d68d; /* Nuevo color verde */
+color: black;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s ease;
+border: 1px solid #27ae60; /* Borde para el botón */
+}
+
+.submit-btn:hover {
+background-color: #1e8449; /* Color más oscuro al hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .car-form {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+    }
+}

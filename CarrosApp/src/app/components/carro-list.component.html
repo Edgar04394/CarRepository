@@ -1,0 +1,37 @@
+<h1 class="page-title">Lista de Carros</h1>
+<div class="container">
+  <button class="create-btn" (click)="crearCarro()">+ Crear Nuevo Carro</button>
+  
+  <div class="table-container">
+    <table class="car-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+          <th>Color</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carro of carros">
+          <td>{{ carro.id }}</td>
+          <td>{{ carro.marca }}</td>
+          <td>{{ carro.modelo }}</td>
+          <td>{{ carro.anio }}</td>
+          <td>
+            <span class="color-circle" [style.background-color]="getColorCode(carro.color)"></span>
+            {{ carro.color }}
+          </td>
+          <td class="price">{{ carro.precio | currency }}</td>
+          <td class="actions">
+            <button class="edit-btn" (click)="editarCarro(carro.id)">✏️ Editar</button>
+            <button class="delete-btn" (click)="eliminarCarro(carro.id)">🗑️ Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

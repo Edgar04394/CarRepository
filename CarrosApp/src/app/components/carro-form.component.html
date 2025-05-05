@@ -1,0 +1,31 @@
+<h1 class="titulo">{{ esEditar ? 'Editar' : 'Crear' }} Carro</h1>
+<div class="form-container">
+  <form (ngSubmit)="guardar()" class="car-form">
+    <div class="form-group">
+      <label class="form-label">Marca:</label>
+      <input [(ngModel)]="carro.marca" name="marca" required class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Modelo:</label>
+      <input [(ngModel)]="carro.modelo" name="modelo" required class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Año:</label>
+      <input type="number" [(ngModel)]="carro.anio" name="anio" required class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Color:</label>
+      <input [(ngModel)]="carro.color" name="color" required class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Precio:</label>
+      <input type="number" step="0.01" [(ngModel)]="carro.precio" name="precio" required class="form-input">
+    </div>
+
+    <button type="submit" class="submit-btn">{{ esEditar ? 'Actualizar' : 'Guardar' }}</button>
+  </form>
+</div>
