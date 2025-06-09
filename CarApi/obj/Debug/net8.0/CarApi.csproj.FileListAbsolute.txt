@@ -157,3 +157,4 @@ C:\PROYECTOS\VISUAL STUDIO CODE\CARROS\CarApi\obj\Debug\net8.0\refint\CarApi.dll
 C:\PROYECTOS\VISUAL STUDIO CODE\CARROS\CarApi\obj\Debug\net8.0\CarApi.pdb
 C:\PROYECTOS\VISUAL STUDIO CODE\CARROS\CarApi\obj\Debug\net8.0\CarApi.genruntimeconfig.cache
 C:\PROYECTOS\VISUAL STUDIO CODE\CARROS\CarApi\obj\Debug\net8.0\ref\CarApi.dll
+C:\PROYECTOS\VISUAL STUDIO CODE\CARROS\CarApi\obj\Debug\net8.0\CarApi.sourcelink.json

@@ -10,7 +10,7 @@ namespace CarApi.Data
 
         public CarroData(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("DefaultConnection") 
+            _connectionString = configuration.GetConnectionString("DefaultConnection")
             ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
         }
 
@@ -43,31 +43,31 @@ namespace CarApi.Data
             return carros;
         }
 
-    public async Task<Carro?> GetById(int id)  // Nota el ? que indica puede retornar null
-    {  
-    await using var connection = new SqlConnection(_connectionString);
-    await connection.OpenAsync();
-
-    await using var command = new SqlCommand("SELECT * FROM Carros WHERE Id = @Id", connection);
-    command.Parameters.AddWithValue("@Id", id);
-
-    await using var reader = await command.ExecuteReaderAsync();
-    
-    if (await reader.ReadAsync())
-    {
-        return new Carro
+        public async Task<Carro?> GetById(int id)  // Nota el ? que indica puede retornar null
         {
-            Id = reader.GetInt32(0),
-            Marca = reader.GetString(1),
-            Modelo = reader.GetString(2),
-            Anio = reader.GetInt32(3),
-            Color = reader.GetString(4),
-            Precio = reader.GetDecimal(5)
-        };
-    }
+            await using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync();
 
-    return null; // Ahora es válido porque el método declara que puede retornar null
-}
+            await using var command = new SqlCommand("SELECT * FROM Carros WHERE Id = @Id", connection);
+            command.Parameters.AddWithValue("@Id", id);
+
+            await using var reader = await command.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                return new Carro
+                {
+                    Id = reader.GetInt32(0),
+                    Marca = reader.GetString(1),
+                    Modelo = reader.GetString(2),
+                    Anio = reader.GetInt32(3),
+                    Color = reader.GetString(4),
+                    Precio = reader.GetDecimal(5)
+                };
+            }
+
+            return null; // Ahora es válido porque el método declara que puede retornar null
+        }
 
         public async Task<int> Create(Carro carro)
         {
